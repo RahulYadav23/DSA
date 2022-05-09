@@ -11,28 +11,28 @@ public class Searching {
     }
     // T.C = n
     static int linearSearch(int []a,int k)
-    {   int found =-1;
+    {
         for(int i=0;i<a.length;i++)
         {
             if(a[i]==k) {
-                found = i;
-                break;
+                return i;
+
             }
         }
-        return found;
+        return -1;
     }
     //binary search tc = log(n)
     static int binarySearch(int[] a,int k)
     {
-        int pos =-1;
+
         int low = 0;
         int high = a.length-1;
         while (low<=high)
         {   int mid = (low+high)/2;
             if(a[mid]==k)
             {
-                pos =mid;
-                break;
+                return mid;
+
             }
             if(a[mid]<k)
             {
@@ -43,7 +43,7 @@ public class Searching {
                 high = mid-1;
             }
         }
-        return pos;
+        return -1;
     }
     static int ternarysearch(int[] a,int k)
     {
