@@ -1,11 +1,14 @@
 package com.primeNumbers;
 
+import java.util.ArrayList;
+
 public class Prime {
     public static void main(String[] args)
     {
       //printPrimeUptoNumber(100);
         //primeLongRange(1000);
       primeInRange(10,20);
+
     }
     //to check a number is prime or not T.C = squreroot(n)
     static boolean checkNumberPrime(int n)
