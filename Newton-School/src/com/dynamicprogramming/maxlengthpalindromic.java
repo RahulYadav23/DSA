@@ -2,18 +2,17 @@ package com.dynamicprogramming;
 
 import java.util.Scanner;
 
-public class CountSubstring {
-
+public class maxlengthpalindromic {
     public static void main(String[] args)
     {
         Scanner sc= new Scanner(System.in);
         String s = sc.nextLine();
-        System.out.println(countpalindrome(s));
+        System.out.println(max(s));
     }
-
-    static int countpalindrome(String s)
+    static int max(String s)
     {
-        int count = 0;
+        int max = 0;
+
         boolean dp[][] =  new boolean[s.length()][s.length()];
         for(int gap=0;gap<s.length();gap++)
         {
@@ -35,12 +34,12 @@ public class CountSubstring {
                 }
 
 
-                if(dp[i][j])
+                if((max<(j-i))&&dp[i][j])
                 {
-                    count++;
+                    max = j-i;
                 }
             }
         }
-        return count;
+        return max+1;
     }
 }

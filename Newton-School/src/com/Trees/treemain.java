@@ -20,15 +20,22 @@ public class treemain {
         bst.add(60);
         bst.add(80);
 
+
         /*
                        50
                    /       \
                   30       70
                  /  \     /  \
-                20  40   60   80
+                20  40   60
+
+
+
          */
        // bst.delete(50);
-        bst.levelorder();
+
+
+        //bst.commonAssesctor1(20,80);
+        bst.call();
     }
 
 

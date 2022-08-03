@@ -30,5 +30,15 @@ public class fibonacci {
         dp[n]=fib3;
         return fib3;
     }
+    static int topfibnacci(int n)
+    {
+        int[] dp = new int[n+1];
 
+        for(int i=2;i<n+1;i++)
+        {
+            dp[i]=dp[i-1]+dp[i-2];
+        }
+
+        return dp[n];
+    }
 }

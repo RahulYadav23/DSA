@@ -1,5 +1,6 @@
 package com.Trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -131,7 +132,8 @@ public class Tree {
     //find the height of  tree BST
     public void height()
     {
-         System.out.print(height(this.root));
+
+        System.out.print(height(this.root));
     }
     private int height(Node root)
     {
@@ -161,7 +163,7 @@ public class Tree {
         }
         return false;
     }
-    //find the min and maximum in tree
+    //find the min and maximum in binary search tree
     public Node min()
     {
         Node p = this.root;
@@ -302,4 +304,64 @@ public class Tree {
         }
 
     }
+    public void commonAssesctor1(int node_Data,int node_Data2)
+    {
+        System.out.println(commonAssesctor(this.root,node_Data,node_Data2).data);
+    }
+
+    private Node commonAssesctor(Node root,int node_Data,int node_Data2)
+    {
+
+
+
+        if(root==null)
+            return null;
+
+        if(root.data==node_Data||root.data==node_Data2)
+          return root;
+
+
+        Node leftside = commonAssesctor(root.leftchild,node_Data,node_Data2);
+        Node rightside = commonAssesctor(root.rightchild,node_Data,node_Data2);
+
+        if(leftside!=null && rightside!=null)
+            return root;
+
+
+        return leftside!=null?leftside:rightside;
+
+    }
+
+    public void call()
+    {  ArrayList<Node> arr  = new ArrayList<>();
+        hor(this.root,arr);
+
+        right(this.root.rightchild,arr);
+
+        for(Node x:arr)
+        {
+            System.out.print(x.data+" ");
+        }
+    }
+    private void hor(Node root,ArrayList<Node> arr )
+    {
+        if(root==null)
+            return;
+
+        hor(root.leftchild,arr);
+        arr.add(root);
+
+
+
+    }
+    private void right(Node root,  ArrayList<Node> arr )
+    {
+        if(root==null)
+            return;
+        arr.add(root);
+        right(root.rightchild,arr);
+
+
+    }
+
 }

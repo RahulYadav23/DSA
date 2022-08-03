@@ -52,8 +52,7 @@ public class knapsack01 {
     static int knapsackunlimited(int weights[],int[] value ,int capacity)
     {
         int[] dp = new int[capacity+1];
-        dp[0]=0;
-        for(int i=1;i<capacity+1;i++)
+        for(int i=0;i<capacity+1;i++)
         {
             for(int j=0;j<weights.length;j++)
             {
@@ -64,24 +63,6 @@ public class knapsack01 {
                 }
             }
         }
-//        int[] dp = new int[capacity + 1];
-//        dp[0] = 0;
-//
-//        for (int col = 1; col < dp.length; col++) {
-//            int max = 0;
-//            for (int wtIndex = 0; wtIndex < weights.length; wtIndex++) {
-//
-//                if (weights[wtIndex] <= col) {
-//                    int remWt = col - weights[wtIndex];
-//                    int remWtVal = dp[remWt];
-//                    if (remWtVal + value[wtIndex] > max)
-//                        max = remWtVal + value[wtIndex];
-//                }
-//
-//            }
-//            dp[col] = max;
-//        }
-
         return dp[capacity];
     }
 }

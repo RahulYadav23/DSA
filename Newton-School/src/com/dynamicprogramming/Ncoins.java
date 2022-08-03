@@ -18,6 +18,7 @@ public class Ncoins {
 
         int target = sc.nextInt();
         System.out.println(permutations(arr,target));
+        System.out.println(countcombination(arr,target));
     }
     static int countcombination(int[] arr,int target)
     {
@@ -35,6 +36,7 @@ public class Ncoins {
                  }
              }
         }
+     
         return dp[target];
     }
     static int permutations(int[] arr,int target)
@@ -54,6 +56,7 @@ public class Ncoins {
                 }
                }
              }
+
         return dp[target];
     }
 
